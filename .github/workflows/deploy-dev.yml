@@ -1,0 +1,43 @@
+name: Deploy Development Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-development
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::829289607419:role/GitHubActions-OptiSoftware-Dev-Deploy
+          aws-region: us-east-1
+
+      - name: Deploy website to S3
+        run: |
+          aws s3 sync . s3://dev-optisoftware-website-829289607419 \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "node_modules/*" \
+            --exclude ".DS_Store" \
+            --exclude "*.bak"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront c          aws cloudfront c          aws cloudon          aws cloudfront c      --path      
