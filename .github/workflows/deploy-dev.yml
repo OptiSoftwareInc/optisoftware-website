@@ -40,4 +40,6 @@ jobs:
 
       - name: Invalidate CloudFront cache
         run: |
-          aws cloudfront c          aws cloudfront c          aws cloudon          aws cloudfront c      --path      
+          aws cloudfront create-invalidation \
+            --distribution-id E3DJDTTBBYO3E \
+            --paths "/*"
