@@ -16,3 +16,14 @@ node_modules/
 # Environment files
 .env
 
+# AWS generated artifacts
+*-distribution.json
+current-distribution.json
+updated-distribution-config.json
+bucket-policy.json
+acm-validation.json
+dev-dns.json
+
+# Python
+__pycache__/
+*.pyc
