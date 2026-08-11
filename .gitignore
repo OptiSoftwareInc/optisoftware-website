@@ -16,3 +16,9 @@ node_modules/
 # Environment files
 .env
 
+
+# Node dependencies
+node_modules/
+
+# AWS SAM build output
+.aws-sam/

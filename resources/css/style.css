@@ -344,6 +344,29 @@ header {
     margin-bottom: 30px;
 }
 
+/* ----------------------------------------------- */
+/* FORM MESSAGES */
+/* ----------------------------------------------- */
+
+#form-message {
+    margin-top: 10px;
+    font-weight: 400;
+    min-height: 24px;
+}
+
+#form-message.success {
+    color: #2e7d32;
+}
+
+#form-message.error {
+    color: #c62828;
+}
+
+#submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 
 /* ----------------------------------------------- */
 /* MEALS */
