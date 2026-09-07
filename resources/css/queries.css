@@ -1,186 +1,255 @@
-/* Big tablet to 1200px (widths smaller taht the 1140px row) */
-@media only screen and (max-width: 1200px) {
-    .hero-text-box {
-        width: 100%;
-        padding: 0 2%;
-    }
-    
-    .row { padding: 0 2%; }
-    
-    /*  make opti flexible */
-    .hero-text-box1 {
-        margin-top: 6%;
-        margin-left: 20%;
-        width: 540px;
-        top: 0%;
-        left: 0%;
+@media only screen and (max-width: 1080px) {
+    .hero-grid,
+    .modernization-grid,
+    .split-section,
+    .about-grid,
+    .contact-grid {
+        gap: 48px;
     }
 
-    .hero-text-box2 {
-        margin-top: 6%;
-        margin-left: 5%;
-        width: 540px;
-        top: 0%;
-        left: 0%;
-        float: left;
+    .practice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    
-    .col:first-child{
-        margin-left:5%;
+
+    .practice-card {
+        min-height: 360px;
     }
- 
+
+    .modernization-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modernization-flow {
+        max-width: 780px;
+    }
+
+    .roadmap {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .roadmap-line {
+        display: none;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.3fr repeat(3, 1fr);
+        gap: 30px;
+    }
 }
 
-
-/* Small tablet to big tablet: from 768px to 1023px */
-@media only screen and (max-width: 1200px) {
-    body { font-size: 18px; }
-    section { padding: 60px 0; }
-    
-    .long-copy {
-        width: 80%;
-        margin-left: 10%;
-    }
-    
-    .steps-box { margin-top: 10px; }
-    .steps-box:last-child { margin-top: 10px; }
-    .works-steps { margin-bottom: 40px; }
-    .works-step:last-of-type { margin-bottom: 60px; }
-    
-    .app-screen { width: 50%; }
-    
-    .icon-small { 
-        width: 17px;
-        margin-right: 5px;
-    }
-    
-    .city-feature { font-size: 90%; }
-    
-    .plan-box {
-        width: 100%;
-        margin-left: 0%;
-    }
-    
-    .plan-price { font-size: 250%; }
-    .contact-form { width: 80%; }
-
-    /*  make opti flexible */
-    .hero-text-box1 {
-        padding: 1%;
-        width: 100%;
-        text-align: left;
+@media only screen and (max-width: 900px) {
+    .section {
+        padding: 82px 0;
     }
 
-    .hero-text-box2 {
-        padding: 1%;
-        width: 100%;
-        margin-left:5%;
-    }
-    
-}
-
-
-
-/* Small phones to small tablets: from 481px to 767px */
-@media only screen and (max-width: 767px) {
-    body { font-size: 16px; }
-    section { padding: 30px 0; }
-    
-    .row,
-    .hero-text-box { padding: 0 4%; }
-    .col { 
-        width: 100%;
-        margin: 0 0 4% 0;
-    }
-    
-    
-    .main-nav { display: none; }
-    .mobile-nav-icon {display: inline-block;}
-    
-    .main-nav {
-        float: left;
-        margin-top: 30px;
-        margin-left: 25px;
-    }
-    
-    .main-nav li {
+    .nav-toggle {
         display: block;
     }
-    
-    .main-nav li a:link,
-    .main-nav li a:visited {
-        display: block;
-        border: 0;
-        padding: 10px 0;
-        font-size: 100%;
-    }
-    
-    .sticky .main-nav { margin-top: 10px; }
 
-    .sticky .main-nav li a:link,
-    .sticky .main-nav li a:visited { padding: 10px 0; }
-    .sticky .mobile-nav-icon { margin-top: 10px; }
-    .sticky .mobile-nav-icon i { color: #555; }
-    
-    
-    
-    h1 { font-size: 180%; }
-    h2 { font-size: 150%; }
-    
-    .long-copy {
-        width: 100%;
-        margin-left: 0%;
-    }
-    
-    .app-screen { width: 40%; }
-    .steps-box:first-child { text-align: center; }
-    
-    .works-step div {
-        height: 40px;
-        width: 40px;
-        margin-right: 15px;
-        padding: 4px;
-        font-size: 120%;
-    }
-    
-    .works-step { margin-bottom: 20px; }
-    .works-step:last-of-type { margin-bottom: 20px; }
-
-    /*  make opti flexible */
-    .hero-text-box1 {
-        padding: 1%;
-        width: 100%;
-        text-align: left;
+    .nav-links {
+        position: absolute;
+        top: 88px;
+        left: 24px;
+        right: 24px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 14px;
+        background: rgba(7, 18, 39, 0.98);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
     }
 
-    .hero-text-box2 {
-        padding: 1%;
-        width: 100%;
-        margin-left:5%;
+    .nav-links.is-open {
+        display: flex;
     }
-    
+
+    .nav-links > a,
+    .nav-links > a:not(.nav-cta) {
+        padding: 12px 10px;
+    }
+
+    .nav-cta {
+        margin-top: 6px;
+        text-align: center;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 74px 0 88px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-architecture {
+        width: 100%;
+        max-width: 620px;
+        margin: 0;
+    }
+
+    .engineering-grid,
+    .split-section,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .three-card-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        min-height: auto;
+    }
+
+    .feature-list-checks {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
 }
 
-
-
-/* Small phones: from 0 to 480px */
-@media only screen and (max-width: 480px) {
-    section { padding: 25px 0; }
-    .contact-form {width: 100%; }
-
-    /*  make opti flexible */
-    .hero-text-box1 {
-        padding: 1%;
-        width: 100%;
-        text-align: left;
+@media only screen and (max-width: 700px) {
+    body {
+        font-size: 16px;
     }
 
-    .hero-text-box2 {
-        padding: 1%;
-        width: 100%;
-        margin-left:5%;
+    .container {
+        width: min(calc(100% - 32px), var(--container));
     }
 
+    .section {
+        padding: 68px 0;
+    }
+
+    .nav-inner {
+        min-height: 76px;
+    }
+
+    .nav-links {
+        top: 76px;
+        left: 16px;
+        right: 16px;
+    }
+
+    .brand img {
+        width: 210px;
+    }
+
+    .hero {
+        padding: 60px 0 72px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .practice-grid,
+    .engineering-grid,
+    .roadmap {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-card {
+        min-height: auto;
+    }
+
+    .modernization-flow {
+        grid-template-columns: 1fr;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+        justify-self: center;
+    }
+
+    .flow-kicker {
+        min-height: auto;
+    }
+
+    .two-column-list {
+        columns: 1;
+    }
+
+    .engineering-card,
+    .info-card,
+    .feature-panel,
+    .contact-card {
+        padding: 26px;
+    }
+
+    .roadmap-step {
+        min-height: 120px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
+@media only screen and (max-width: 460px) {
+    .container {
+        width: min(calc(100% - 24px), var(--container));
+    }
 
+    .section {
+        padding: 58px 0;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 12vw, 3.3rem);
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .brand img {
+        width: 185px;
+    }
+
+    .hero-capabilities span,
+    .capability-strip span,
+    .platforms span {
+        width: 100%;
+        text-align: center;
+    }
+
+    .architecture-card {
+        padding: 20px;
+    }
+
+    .engineering-header {
+        flex-direction: column;
+    }
+
+    .contact-card {
+        padding: 22px;
+    }
+}
