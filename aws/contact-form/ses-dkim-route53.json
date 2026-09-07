@@ -1,0 +1,44 @@
+{
+  "Comment": "Add SES Easy DKIM records for optisoftware.com",
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "mmj4y64vrwqxok5pf4flo42e54axiobv._domainkey.optisoftware.com.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "mmj4y64vrwqxok5pf4flo42e54axiobv.dkim.amazonses.com."
+          }
+        ]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "irwfj74h6zhenimjqnpqzfh6iuomtf5s._domainkey.optisoftware.com.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "irwfj74h6zhenimjqnpqzfh6iuomtf5s.dkim.amazonses.com."
+          }
+        ]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "djwoso335fotbjdaqgcunnr3mpdhmdbu._domainkey.optisoftware.com.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "djwoso335fotbjdaqgcunnr3mpdhmdbu.dkim.amazonses.com."
+          }
+        ]
+      }
+    }
+  ]
+}

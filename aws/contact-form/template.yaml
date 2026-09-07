@@ -1,0 +1,121 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: OptiSoftware production contact form API
+
+Parameters:
+  FromEmail:
+    Type: String
+    Default: website@optisoftware.com
+
+  ToEmail:
+    Type: String
+    Default: info@optisoftware.com
+
+Globals:
+  Function:
+    Runtime: nodejs22.x
+    Architectures:
+      - arm64
+    MemorySize: 128
+    Timeout: 10
+    Tracing: Active
+
+Resources:
+
+  ContactEmailIdentity:
+    Type: AWS::SES::EmailIdentity
+    Properties:
+      EmailIdentity: optisoftware.com
+      DkimAttributes:
+        SigningEnabled: true
+      FeedbackAttributes:
+        EmailForwardingEnabled: true
+
+  ContactApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: prod
+      CorsConfiguration:
+        AllowOrigins:
+          - https://optisoftware.com
+          - https://www.optisoftware.com
+        AllowMethods:
+          - POST
+          - OPTIONS
+        AllowHeaders:
+          - content-type
+        MaxAge: 600
+
+  ContactFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: optisoftware-prod-contact-form
+      Description: Sends website contact requests
+      CodeUri: src/
+      Handler: app.handler
+
+      Environment:
+        Variables:
+          FROM_EMAIL: !Ref FromEmail
+          TO_EMAIL: !Ref ToEmail
+
+      Policies:
+        - Statement:
+            - Sid: SendContactEmail
+              Effect: Allow
+              Action:
+                - ses:SendEmail
+              Resource:
+                - !Sub arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/optisoftware.com
+
+      Events:
+        ContactPost:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ContactApi
+            Path: /contact
+            Method: POST
+
+  ContactFunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: /aws/lambda/optisoftware-prod-contact-form
+      RetentionInDays: 30
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+
+Outputs:
+
+  ContactApiUrl:
+    Description: Contact API endpoint
+    Value: !Sub https://${ContactApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/prod/contact
+
+  ContactFunctionName:
+    Description: Lambda Function
+    Value: !Ref ContactFunction
+
+  DkimTokenName1:
+    Description: SES DKIM DNS record name 1
+    Value: !GetAtt ContactEmailIdentity.DkimDNSTokenName1
+
+  DkimTokenValue1:
+    Description: SES DKIM DNS record value 1
+    Value: !GetAtt ContactEmailIdentity.DkimDNSTokenValue1
+
+  DkimTokenName2:
+    Description: SES DKIM DNS record name 2
+    Value: !GetAtt ContactEmailIdentity.DkimDNSTokenName2
+
+  DkimTokenValue2:
+    Description: SES DKIM DNS record value 2
+    Value: !GetAtt ContactEmailIdentity.DkimDNSTokenValue2
+
+  DkimTokenName3:
+    Description: SES DKIM DNS record name 3
+    Value: !GetAtt ContactEmailIdentity.DkimDNSTokenName3
+
+  DkimTokenValue3:
+    Description: SES DKIM DNS record value 3
+    Value: !GetAtt ContactEmailIdentity.DkimDNSTokenValue3
+    

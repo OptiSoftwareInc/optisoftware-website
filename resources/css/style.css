@@ -344,6 +344,46 @@ header {
     margin-bottom: 30px;
 }
 
+/* ----------------------------------------------- */
+/* FORM MESSAGES */
+/* ----------------------------------------------- */
+
+/* Contact form response message */
+#form-message {
+    display: none;
+    margin: 20px auto 0 auto;
+    max-width: 640px;
+    padding: 14px 20px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Success response */
+#form-message.success {
+    display: flex;
+    background-color: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+/* Error response */
+#form-message.error {
+    display: flex;
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* Disabled submit button while sending */
+#submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 
 /* ----------------------------------------------- */
 /* MEALS */
