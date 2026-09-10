@@ -241,6 +241,32 @@ Application Modernization is one of the four primary practices.
 Java and Node.js should both be presented as important application
 engineering capabilities.
 
+### Modern Java deployment architecture
+
+Relevant modernization capabilities include:
+
+- Spring Boot
+- Embedded Apache Tomcat
+- Independently deployable Java applications
+- Docker
+- Kubernetes
+- Containerized application deployment
+- Microservices
+- REST APIs
+- Event-driven architectures
+
+OptiSoftware understands the architectural transition from traditional
+enterprise Java applications deployed into large standalone application
+servers such as WebLogic toward independently deployable Spring Boot
+applications using embedded servlet containers such as Apache Tomcat.
+
+Where appropriate, modern applications may be containerized with Docker
+and deployed using Kubernetes or AWS-native architectures.
+
+Do not imply that Kubernetes, containers, or microservices are required
+for every modernization project. Architecture should be selected according
+to workload, operational, scalability, security, and business requirements.
+
 ### Java expertise
 
 Relevant technologies and themes include:
