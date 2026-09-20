@@ -566,6 +566,11 @@ p + p {
 
 .engineering-card {
     padding: 34px;
+    color: var(--slate-700);
+}
+
+.section-dark .engineering-card h3 {
+    color: var(--slate-900);
 }
 
 .engineering-header {
