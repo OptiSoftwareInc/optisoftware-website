@@ -667,6 +667,14 @@ p + p {
     padding: 36px;
 }
 
+#db2 .feature-panel {
+    color: var(--slate-700);
+}
+
+#db2 .feature-panel h3 {
+    color: var(--slate-900);
+}
+
 .feature-list-checks {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
