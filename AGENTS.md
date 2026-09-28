@@ -1190,9 +1190,9 @@ Cloud, Application & Database Modernization
 
 **Core practices**
 
-AWS Cloud Consulting  
-Application Modernization  
-Database Engineering  
+AWS Cloud Consulting
+Application Modernization
+Database Engineering
 Enterprise Architecture
 
 **Application expertise**
@@ -1201,35 +1201,35 @@ Java + Node.js
 
 **Database/data-platform expertise**
 
-Oracle  
-IBM Db2  
-PostgreSQL  
-SQL Server  
-MongoDB  
-Elasticsearch  
+Oracle
+IBM Db2
+PostgreSQL
+SQL Server
+MongoDB
+Elasticsearch
 AWS database and data services
 
 **Enterprise modernization expertise**
 
-IBM mainframe  
-Db2 LUW  
-Db2 for z/OS  
-Java EE  
-WebLogic  
-JMS  
-Legacy integration  
+IBM mainframe
+Db2 LUW
+Db2 for z/OS
+Java EE
+WebLogic
+JMS
+Legacy integration
 Hybrid cloud
 
 **Modern target capabilities**
 
-AWS  
-Modern Java  
-Spring Boot  
-Node.js  
-APIs  
-Microservices  
-Serverless  
-Cloud databases  
+AWS
+Modern Java
+Spring Boot
+Node.js
+APIs
+Microservices
+Serverless
+Cloud databases
 CI/CD
 
 **Signature modernization message**
@@ -1240,5 +1240,3 @@ Modernize Without Starting Over
 
 Preserve business value while creating a practical path to modern
 architecture.
-
-
